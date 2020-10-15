@@ -73,4 +73,17 @@ class NextDayCalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("31/12/2018")
+    void getNextDay31Month12() {
+        int day = 31;
+        int month = 12;
+        int year = 2018;
+
+        String expected = "1/1/2019";
+        String actual = NextDayCalculator.getNextDayOfMonth(day, month, year);
+
+        assertEquals(expected, actual);
+    }
 }

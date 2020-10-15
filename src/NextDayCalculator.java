@@ -33,12 +33,18 @@ public class NextDayCalculator {
     public static String getNextDayOfMonth(int day, int month, int year) {
         int nextDay = day;
         int nextMonth = month;
+        int nextYear = year;
         if (day == getLastDayOfMonth(month, year)) {
             nextDay = 1;
-            nextMonth++;
+            if (month == 12) {
+                nextMonth = 1;
+                nextYear++;
+            } else {
+                nextMonth++;
+            }
         } else {
             nextDay++;
         }
-        return nextDay + "/" + nextMonth + "/" + year;
+        return nextDay + "/" + nextMonth + "/" + nextYear;
     }
 }
