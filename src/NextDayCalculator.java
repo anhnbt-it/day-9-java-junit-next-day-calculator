@@ -17,9 +17,17 @@ public class NextDayCalculator {
             case 11:
                 return 30;
             case 2:
-                return 28;
+                if (isLeapYear(year)) {
+                    return 29;
+                } else {
+                    return 28;
+                }
         }
         return 31;
+    }
+
+    private static boolean isLeapYear(int year) {
+        return ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
     }
 
     public static String getNextDayOfMonth(int day, int month, int year) {
