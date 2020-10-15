@@ -16,6 +16,8 @@ public class NextDayCalculator {
             case 9:
             case 11:
                 return 30;
+            case 2:
+                return 28;
         }
         return 31;
     }
