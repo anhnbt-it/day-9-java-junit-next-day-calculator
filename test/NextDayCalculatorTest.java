@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class NextDayCalculatorTest {
 
     @Test
-    @DisplayName("1-1-2018")
+    @DisplayName("1/1/2018")
     void getNextDay1() {
         int day = 1;
         int month = 1;
@@ -24,7 +24,7 @@ class NextDayCalculatorTest {
     }
 
     @Test
-    @DisplayName("31-1-2018")
+    @DisplayName("31/1/2018")
     void getNextDay31() {
         int day = 31;
         int month = 1;
@@ -32,6 +32,19 @@ class NextDayCalculatorTest {
 
         String expected = "1/2/2018";
         String actual = NextDayCalculator.getNextDayOfMonth(day, month, year);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("30/4/2018")
+    void getNextDay30() {
+        int day = 30;
+        int month = 4;
+        int year = 2018;
+
+        String expected = "1/5/2018";
+        String actual = NextDayCalculator.getNextDayOfMonth(day, month, year);
+
         assertEquals(expected, actual);
     }
 }
